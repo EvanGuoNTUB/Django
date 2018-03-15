@@ -19,6 +19,6 @@ from .views import hi,r
 
 urlpatterns = [
     path('hi/<int:n1>/<int:n2>/', hi),
-    path('r/<int:start>/<int:stop>/', r),
+    path('r/<int:start>/<int:stop>/<int:step>/', r),
     path('admin/', admin.site.urls),
 ]

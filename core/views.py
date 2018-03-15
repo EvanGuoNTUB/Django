@@ -8,11 +8,18 @@ def hi(request,n1,n2):
         's':s,
     })
 
-def r(requset,start,stop):
+def r(requset,start,stop,step):
+    if step == 0:
+        rr = range(start, stop + 1, 2)
+    elif step == 1:
+
+    else
+        rr = range(start, stop + 1)
+
     if start > stop:
         start, stop= stop, start
 
-    rr=range(start,stop+1)
+    #rr=range(start,stop+1,2)
     if start >stop:
         rr=reversed(rr)
 
