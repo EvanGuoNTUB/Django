@@ -9,20 +9,16 @@ def hi(request,n1,n2):
     })
 
 def r(requset,start,stop,step):
-    if step == 0:
-        rr = range(start, stop + 1, 2)
-    elif step == 1:
 
-    else
-        rr = range(start, stop + 1)
-
-    if start > stop:
-        start, stop= stop, start
-
-    #rr=range(start,stop+1,2)
-    if start >stop:
-        rr=reversed(rr)
-
+    start, stop = min(stop, start), max(stop, start)
+    rr = range(start, stop + 1, 2)
     return render(requset,'r.html',{
         'rr':rr,
+
+    })
+def tag_test(request):
+    ll=[1,2,3,4,5,6,7,8]
+    return  render(request,'tag_test.html',{
+        'll':ll,
+
     })
