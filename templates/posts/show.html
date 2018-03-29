@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Posts</h1>
+{# 註解 #}
+<div>{{post.id}}</div>
+<h5>{{post.title}}</h5>
+<p>{{post.content}}</p>
+
+{{ post.title }}-{{ post.content }} <br>
+    <a href="{% url 'posts_index' %}">{{ post.id }}</a>
+
+</body>
+</html>

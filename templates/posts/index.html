@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>123</title>
+</head>
+<body>
+
+<h1>Posts</h1>
+{{ post }}
+
+{#  <a href="/posts/{{ post }}">{{ post.id }}</a>#}
+<hr>
+{% for post in posts %}
+<a href="{% url 'posts_show' %}">{{ post.id }}
+    #-{{ post.title }}</a>
+<hr>
+{{ post.content }}
+{% endfor %}
+</body>
+</html>

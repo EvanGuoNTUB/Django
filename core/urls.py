@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import hi,r,tag_test
+from practice1 import views
 
 urlpatterns = [
     path('hi/<int:n1>/<int:n2>/', hi),
     path('r/<int:start>/<int:stop>/<int:step>/', r),
     path('admin/', admin.site.urls),
     path('tag_test/', tag_test),
+    path('posts/',views.index),
+    path('posts/<int:pk>/',views.show,name='posts_show'),
 
 ]
