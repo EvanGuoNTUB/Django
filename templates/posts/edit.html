@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Post Edit</h1>
+
+
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+  <button type="button"><a style="text-decoration: none; text-decoration-color: black" href="{% url 'posts_index' %}">Back</a></button>
+</form>
+
+</body>
+</html>
