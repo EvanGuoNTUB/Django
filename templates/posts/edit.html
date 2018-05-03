@@ -1,25 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout.html" %}
 
-<h1>Post Edit</h1>
+{% block title %}
+edit
+{% endblock %}
 
+{% block main %}
 
-
-<form action="" method="post">
-    {% csrf_token %}
-
-    {{ form.as_p }}
+    <h1>Post Edit</h1>
 
 
-<button type="submit">Submit</button>
-<button type="reset">Reset</button>
-  <button type="button"><a style="text-decoration: none; text-decoration-color: black" href="{% url 'posts_index' %}">Back</a></button>
-</form>
 
-</body>
-</html>
+{#    <form action="" method="post">#}
+{#        {% csrf_token %}#}
+{##}
+{#        {{ form.as_p }}#}
+{##}
+{##}
+{#    <button class="btn btn-outline-primary " type="submit">Submit</button>#}
+{#    <button class="btn btn-outline-primary " type="reset">Reset</button>#}
+{#      <button class="btn btn-outline-primary " type="button"><a style="text-decoration: none; text-decoration-color: black" href="{% url 'posts:index' %}">Back</a></button>#}
+{#    </form>#}
+
+    {% include "_form.html" %}
+
+{% endblock %}

@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout.html" %}
 
-<h1>Posts</h1>
-{# 註解 #}
-<div>{{post.id}}</div>
-<h5>{{post.title}}</h5>
-<p>{{post.content}}</p>
+{% block title %}
+show
+{% endblock %}
 
-{{ post.title }}-{{ post.content }} <br>
-<hr>
-    <a href="{% url 'posts_edit' post.id %}">Edit</a>
-    <a href="{% url 'posts_delete' post.id %}">Delete</a>
-    <a href="{% url 'posts_index' %}">Back To List</a>
+{% block main %}
 
-</body>
-</html>
+    <h1>Posts</h1>
+    {# 註解 #}
+    <div>{{post.id}}</div>
+    <h5>{{post.title}}</h5>
+    <p>{{post.content}}</p>
+
+    {{ post.title }}-{{ post.content }} <br>
+    <hr>
+        <a class="btn btn-outline-primary " href="{% url 'posts:edit' post.id %}">Edit</a>
+        <a class="btn btn-outline-primary " href="{% url 'posts:delete' post.id %}">Delete</a>
+        <a class="btn btn-outline-primary " href="{% url 'posts:index' %}">Back To List</a>
+
+{% endblock %}

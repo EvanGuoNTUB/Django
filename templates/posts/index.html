@@ -1,20 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>123</title>
-</head>
-<body>
+{% extends "layout.html" %}
 
-<h1>Posts</h1>
-<a href="{% url 'posts_new' %}">New Posts</a>
+{% block title %}
+index
+{% endblock %}
 
-{#  <a href="/posts/{{ post }}">{{ post.id }}</a>#}
-<hr>
-{% for post in posts %}
-<a href="{% url 'posts_show' post.id%}">#{{ post.title }}</a>
-    {{ post.content }}<hr>
-{% endfor %}
+{% block main %}
 
-</body>
-</html>
+
+    <a class="btn btn-outline-primary btn-sm float-right mt-3" href="{% url 'posts:new' %}">New Posts</a>
+
+    <h1>Posts</h1>
+    {#  <a href="/posts/{{ post }}">{{ post.id }}</a>#}
+    <hr>
+
+    {% for post in posts %}
+    <a href="{% url 'posts:show' post.id%}">#{{ post.title }}</a>
+        {{ post.content }}<hr>
+    {% endfor %}
+
+{% endblock %}
+
+
